@@ -37,11 +37,10 @@
       android:contentDescription="@null"
       android:duplicateParentState="true"/>
   </FrameLayout>
-  <com.google.android.material.internal.BaselineLayout
+  <FrameLayout
       android:id="@id/navigation_bar_item_labels_group"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_gravity="bottom|center_horizontal"
       android:paddingBottom="@dimen/design_bottom_navigation_label_padding"
       android:clipChildren="false"
       android:clipToPadding="false"
@@ -63,5 +62,5 @@
         android:maxLines="1"
         android:textSize="@dimen/design_bottom_navigation_active_text_size"
         android:visibility="invisible"/>
-  </com.google.android.material.internal.BaselineLayout>
+  </FrameLayout>
 </merge>

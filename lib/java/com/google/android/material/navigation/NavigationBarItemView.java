@@ -97,7 +97,7 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
   @Nullable private final FrameLayout iconContainer;
   @Nullable private final View activeIndicatorView;
   private final ImageView icon;
-  private final BaselineLayout labelGroup;
+  private final FrameLayout labelGroup;
   private final TextView smallLabel;
   private final TextView largeLabel;
   private int itemPosition = INVALID_ITEM_POSITION;
@@ -221,7 +221,17 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
     if (itemData.getIcon() == null) {
       iconContainer.setVisibility(GONE);
       if (VERSION.SDK_INT >= VERSION_CODES.M) {
-        labelGroup.setForegroundGravity(Gravity.CENTER_HORIZONTAL);
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        params.gravity = Gravity.CENTER_HORIZONTAL;
+
+        labelGroup.setLayoutParams(params);
+      }
+    } else {
+      if (VERSION.SDK_INT >= VERSION_CODES.M) {
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        params.gravity = Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM;
+
+        labelGroup.setLayoutParams(params);
       }
     }
     this.initialized = true;
