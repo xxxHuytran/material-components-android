@@ -42,7 +42,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:clipChildren="false"
-      android:paddingBottom="@dimen/design_bottom_navigation_label_padding"
+      android:layout_marginBottom="@dimen/design_bottom_navigation_label_padding"
       android:layout_gravity="center_horizontal|bottom"
       android:clipToPadding="false"
       android:duplicateParentState="true">
@@ -52,7 +52,6 @@
         android:layout_height="wrap_content"
         android:duplicateParentState="true"
         android:ellipsize="end"
-        android:text="HELLO"
         android:maxLines="1"
         android:textSize="@dimen/design_bottom_navigation_text_size"/>
       <TextView
