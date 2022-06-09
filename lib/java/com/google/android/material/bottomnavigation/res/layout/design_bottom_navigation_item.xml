@@ -14,38 +14,49 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
 
-  <FrameLayout
-    android:id="@id/navigation_bar_item_icon_container"
+  <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-    android:layout_marginTop="@dimen/design_bottom_navigation_margin"
-    android:layout_marginBottom="@dimen/design_bottom_navigation_margin"
-    android:duplicateParentState="true">
-    <View
-      android:id="@id/navigation_bar_item_active_indicator_view"
-      android:layout_width="0dp"
-      android:layout_height="0dp"
-      android:layout_gravity="center" />
-    <ImageView
-      android:id="@id/navigation_bar_item_icon_view"
-      android:layout_width="24dp"
-      android:layout_height="24dp"
-      android:layout_gravity="center"
-      android:contentDescription="@null"
-      android:duplicateParentState="true"/>
-  </FrameLayout>
-  <FrameLayout
+    android:paddingVertical="@dimen/design_bottom_navigation_margin">
+
+    <FrameLayout
+      android:id="@id/navigation_bar_item_icon_container"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_horizontal"
+      android:layout_marginBottom="@dimen/design_bottom_navigation_margin"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      android:duplicateParentState="true">
+      <View
+        android:id="@id/navigation_bar_item_active_indicator_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center" />
+      <ImageView
+        android:id="@id/navigation_bar_item_icon_view"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:contentDescription="@null"
+        android:duplicateParentState="true"/>
+    </FrameLayout>
+    <FrameLayout
       android:id="@id/navigation_bar_item_labels_group"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:paddingBottom="@dimen/design_bottom_navigation_label_padding"
       android:clipChildren="false"
       android:clipToPadding="false"
-      android:duplicateParentState="true">
-    <TextView
+      android:duplicateParentState="true"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/navigation_bar_item_icon_container"
+      app:layout_constraintBottom_toBottomOf="parent">
+      <TextView
         android:id="@id/navigation_bar_item_small_label_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,7 +64,7 @@
         android:ellipsize="end"
         android:maxLines="1"
         android:textSize="@dimen/design_bottom_navigation_text_size"/>
-    <TextView
+      <TextView
         android:id="@id/navigation_bar_item_large_label_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,5 +73,6 @@
         android:maxLines="1"
         android:textSize="@dimen/design_bottom_navigation_active_text_size"
         android:visibility="invisible"/>
-  </FrameLayout>
+    </FrameLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
 </merge>
