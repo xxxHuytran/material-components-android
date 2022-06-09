@@ -219,9 +219,11 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
     setVisibility(itemData.isVisible() ? View.VISIBLE : View.GONE);
 
     if (itemData.getIcon() == null) {
-      iconContainer.setVisibility(GONE);
+      ImageView imv = findViewById(R.id.navigation_bar_item_icon_view);
+      imv.setVisibility(GONE);
     } else {
-      iconContainer.setVisibility(VISIBLE);
+      ImageView imv = findViewById(R.id.navigation_bar_item_icon_view);
+      imv.setVisibility(VISIBLE);
     }
     this.initialized = true;
   }
