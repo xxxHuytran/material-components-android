@@ -22,8 +22,7 @@
       android:layout_height="wrap_content"
       android:layout_gravity="center_horizontal"
       android:duplicateParentState="true"
-      android:layout_marginTop="@dimen/design_bottom_navigation_margin"
-      android:layout_marginBottom="@dimen/design_bottom_navigation_margin">
+      android:layout_marginTop="@dimen/design_bottom_navigation_margin">
       <View
         android:id="@id/navigation_bar_item_active_indicator_view"
         android:layout_width="0dp"
@@ -43,6 +42,7 @@
       android:layout_height="wrap_content"
       android:clipChildren="false"
       android:layout_marginBottom="@dimen/design_bottom_navigation_label_padding"
+      android:layout_marginTop="@dimen/design_bottom_navigation_margin"
       android:layout_gravity="center_horizontal|bottom"
       android:clipToPadding="false"
       android:duplicateParentState="true">
