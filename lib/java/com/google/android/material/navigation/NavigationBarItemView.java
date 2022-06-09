@@ -222,7 +222,7 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
       iconContainer.setVisibility(GONE);
       if (VERSION.SDK_INT >= VERSION_CODES.M) {
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        params.gravity = Gravity.CENTER_HORIZONTAL;
+        params.gravity = Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL;
 
         labelGroup.setLayoutParams(params);
       }
