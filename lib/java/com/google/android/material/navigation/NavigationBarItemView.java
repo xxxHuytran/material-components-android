@@ -66,6 +66,7 @@ import androidx.core.widget.TextViewCompat;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.badge.BadgeUtils;
+import com.google.android.material.internal.BaselineLayout;
 import com.google.android.material.motion.MotionUtils;
 import com.google.android.material.resources.MaterialResources;
 import com.google.android.material.ripple.RippleUtils;
@@ -96,7 +97,7 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
   @Nullable private final FrameLayout iconContainer;
   @Nullable private final View activeIndicatorView;
   private final ImageView icon;
-  private final ViewGroup labelGroup;
+  private final BaselineLayout labelGroup;
   private final TextView smallLabel;
   private final TextView largeLabel;
   private int itemPosition = INVALID_ITEM_POSITION;
@@ -216,6 +217,13 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
       TooltipCompat.setTooltipText(this, tooltipText);
     }
     setVisibility(itemData.isVisible() ? View.VISIBLE : View.GONE);
+
+    if (itemData.getIcon() == null) {
+      iconContainer.setVisibility(GONE);
+      if (VERSION.SDK_INT >= VERSION_CODES.M) {
+        labelGroup.setForegroundGravity(Gravity.CENTER_HORIZONTAL);
+      }
+    }
     this.initialized = true;
   }
 
