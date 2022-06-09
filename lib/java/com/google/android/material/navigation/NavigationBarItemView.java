@@ -97,7 +97,7 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
   @Nullable private final FrameLayout iconContainer;
   @Nullable private final View activeIndicatorView;
   private final ImageView icon;
-  private final ViewGroup labelGroup;
+  private final FrameLayout labelGroup;
   private final TextView smallLabel;
   private final TextView largeLabel;
   private int itemPosition = INVALID_ITEM_POSITION;
@@ -219,8 +219,8 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
     setVisibility(itemData.isVisible() ? View.VISIBLE : View.GONE);
 
     if (itemData.getIcon() == null) {
-      ImageView imvLabelIcon = findViewById(R.id.navigation_bar_item_icon_view);
-      imvLabelIcon.setVisibility(GONE);
+      ImageView imv = findViewById(R.id.navigation_bar_item_icon_view);
+      imv.setVisibility(GONE);
     }
     this.initialized = true;
   }
